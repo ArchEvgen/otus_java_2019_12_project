@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ru.otus.grpc.exchange;
+
+option java_multiple_files = true;
+option java_package = "ru.otus.grpc.exchange";
+option java_outer_classname = "ExchangeProto";
+
+import "money.proto";
+
+service ExchangeService {
+    rpc Exchange (ExchangeRequest) returns (ExchangeResponse) {}
+}
+
+message ExchangeRequest {
+    Money Money = 1;
+    Currency TargetCurrency = 2;
+}
+
+message ExchangeResponse {
+    Money Money = 1;
+}

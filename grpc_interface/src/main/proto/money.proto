@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ru.otus.grpc.exchange;
+
+option java_multiple_files = true;
+option java_package = "ru.otus.grpc.money";
+option java_outer_classname = "MoneyProto";
+
+enum Currency {
+    UNKNOWN = 0;
+    RUB = 1;
+    USD = 2;
+    EUR = 3;
+}
+
+message Money {
+    int32 Value = 1;
+    int32 Rank = 2;
+    Currency Currency = 3;
+}
